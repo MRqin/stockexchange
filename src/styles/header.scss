@@ -1,0 +1,79 @@
+/* header */
+
+.nav {
+    width: 100%;
+    z-index: 999;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    img {
+        width: 40px;
+        height: 40px;
+        vertical-align: middle;
+    }
+    .home-menu {
+        margin: 0 50px 0 50px;
+        width: 1300px;
+        height: 85px;
+        line-height: 85px;
+        .pure-menu-heading {
+            padding: 0;
+            margin-top: 8px;
+            margin-right: 50px;
+            width: 239px;
+            height: 40px;
+            background: url('../static/images/logo.png') 0 0 no-repeat;
+            background-size: 239px 30px;
+        }
+        .pure-menu-list {
+            .pure-menu-item {
+                padding: 0 2em;
+                .pure-menu-link {
+                    color: rgba(0, 0, 0, 0.8);
+                    padding: 0;
+                    font-size: 16px;
+                    &:hover {
+                        background-color: transparent;
+                        color: rgba(0, 0, 0, 1.0);
+                    }
+                    &:focus {
+                        background-color: transparent;
+                    }
+                }
+                &.pure-menu-selected {
+                    .pure-menu-link {
+                        color: rgba(0, 0, 0, 0.8);
+                    }
+                }
+                .pure-button-normal {
+                    font-size: 16px;
+                    width: 80px;
+                    background-color: transparent;
+                    color: #e7541c;
+                    border: solid 1px #e7541c;;
+                    padding: 4px 0;
+                    text-align: center;
+                    &:hover {
+                        background-color: #e7541c;
+                        color: white;
+                        border-color: #e7541c;
+                    }
+                }
+            }
+            .nav-userInfo {
+                .ant-menu-horizontal {
+                    background-color: transparent;
+                    border-bottom: none;
+                }
+                .ant-menu-submenu-title {
+                    color: #fff;
+                }
+                .ant-menu-submenu-title:hover {
+                    color: #fff;
+                }
+            }
+        }
+        .pure-menu-list-right {
+            float: right;
+        }
+    }
+}
