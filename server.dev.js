@@ -4,13 +4,14 @@
 var webpack = require('webpack');
 var express = require('express');
 var config = require('./webpack.dev.config.js');
-var proxyMiddleware = require('http-proxy-middleware');
+var proxy = require('http-proxy-middleware');
 var ProjCfg = require('./project.js');
 const http = require('http');
 
-var app = express();
-var compiler = webpack(config);
 
+var app = express();
+ 
+var compiler = webpack(config);
 app.use(require('webpack-dev-middleware')(compiler, {
 	publicPath: config.output.publicPath,
 	hot: true,
@@ -19,8 +20,10 @@ app.use(require('webpack-dev-middleware')(compiler, {
 	progress: true,
 	stats: {
 		colors: true,
-	}
+    }
 }));
+
+app.use('/finance/stock/*', proxy({target:'http://web.juhe.cn:8080',changeOrigin:true}));
 
 app.use(require('webpack-hot-middleware')(compiler));
 // all other url redirect ro index.html

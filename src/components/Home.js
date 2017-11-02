@@ -6,11 +6,46 @@ import {
     Link
 } from 'react-router-dom';
 import Nav from './Nav';
+import axios from 'axios';
 import '../styles/home.scss';
+
 import { Form, Input, Button, Row, Col, message, Tabs } from 'antd';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 class Home extends React.Component {
+    constructor(props) {
+	    super(props);
+	    this.state = {
+            shangzhengData:[],
+		};
+        // ProjCfg.base.APIServerBaseUrl
+	}
+    componentDidMount() {
+        var self = this;
+        axios({
+            method: 'get',
+            url: '/finance/stock/hs?gid=&type=0&key=1ed6d144683a32812ebe646f31a8e62e'
+        }).then(function (response) {
+            console.log('response', response);
+            if (response.status == 200 ) {
+                console.log('result',response.data.result);
+                self.setState({
+                    shangzhengData: response.data.result,
+                });
+            }
+        }).catch(function (err) {
+            // console.log(err);
+            // console.log('222');
+        });
+        // jsonp('http://web.juhe.cn:8080/finance/stock/hs?gid=&type=0&key=1ed6d144683a32812ebe646f31a8e62e', null, function (err, data) {
+        //     if (err) {
+        //     //   console.error(err.message);
+        //     } else {
+        //     //   console.log(data);
+        //     }
+        //   });
+    }
+
     render() {
         const { getFieldDecorator } = this.props.form;
         const formItemLayout = {
@@ -73,6 +108,17 @@ class Home extends React.Component {
                                     <td>当前价格</td>
                                     <td>今日开盘价</td>
                                     <td>昨日收盘价</td>
+                                </tr>
+                                <tr>
+                                    <td>{this.state.shangzhengData.dealNum}</td>
+                                    <td>{this.state.shangzhengData.dealPri}</td>
+                                    <td>{this.state.shangzhengData.highPri}</td>
+                                    <td>{this.state.shangzhengData.lowpri}</td>
+                                    <td>{this.state.shangzhengData.increPer}</td>
+                                    <td>{this.state.shangzhengData.increase}</td>
+                                    <td>{this.state.shangzhengData.nowpri}</td>
+                                    <td>{this.state.shangzhengData.openPri}</td>
+                                    <td>{this.state.shangzhengData.yesPri}</td>
                                 </tr>
                             </tbody>
                         </table>

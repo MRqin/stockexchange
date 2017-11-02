@@ -4,7 +4,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ProjCfg = require('./project.js');
-
+var proxy= require('http-proxy-middleware');
 // root path
 var ROOT_PATH = path.resolve(__dirname);
 
