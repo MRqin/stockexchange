@@ -124,6 +124,7 @@ class Home extends React.Component {
                         </table>
                         </TabPane>
                         <TabPane tab="深证指数" key="2"></TabPane>
+                        <li></li>
                         <TabPane tab="恒生指数" key="3"></TabPane>
                     </Tabs>
                 </div>
