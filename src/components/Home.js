@@ -18,6 +18,10 @@ class Home extends React.Component {
         this.state = {
             shangzhengData: [],
             shenzhengData: [],
+<<<<<<< HEAD
+=======
+            hengshengData: [],
+>>>>>>> 8f46c8891900773dfb53f11e880298b425456b64
         };
         // ProjCfg.base.APIServerBaseUrl
     }
@@ -127,9 +131,65 @@ class Home extends React.Component {
                             </table>
                         </TabPane>
                         <TabPane tab="深证指数" key="2">
+<<<<<<< HEAD
                         
                         </TabPane>
                         <TabPane tab="恒生指数" key="3"></TabPane>
+=======
+                            <table className="pure-table">
+                                <tbody>
+                                    <tr>
+                                        <td>成交量</td>
+                                        <td>成交额</td>
+                                        <td>最高价</td>
+                                        <td>最低价</td>
+                                        <td>跌涨百分比</td>
+                                        <td>跌涨幅</td>
+                                        <td>当前价格</td>
+                                        <td>今日开盘价</td>
+                                        <td>昨日收盘价</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{this.state.shenzhengData.dealNum}</td>
+                                        <td>{this.state.shenzhengData.dealPri}</td>
+                                        <td>{this.state.shenzhengData.highPri}</td>
+                                        <td>{this.state.shenzhengData.lowpri}</td>
+                                        <td>{this.state.shenzhengData.increPer}</td>
+                                        <td>{this.state.shenzhengData.increase}</td>
+                                        <td>{this.state.shenzhengData.nowpri}</td>
+                                        <td>{this.state.shenzhengData.openPri}</td>
+                                        <td>{this.state.shenzhengData.yesPri}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </TabPane>
+                        <TabPane tab="恒生指数" key="3">
+                            <table className="pure-table">
+                                <tbody>
+                                    <tr>
+                                        <td>成交额</td>
+                                        <td>涨跌额</td>
+                                        <td>涨跌幅</td>
+                                        <td>最高价</td>
+                                        <td>最低价</td>
+                                        <td>前收盘价</td>
+                                        <td>开盘价</td>
+                                        <td>最新价</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{this.state.hengshengData.traAmount}</td>
+                                        <td>{this.state.hengshengData.uppic}</td>
+                                        <td>{this.state.hengshengData.limit}</td>
+                                        <td>{this.state.hengshengData.maxpri}</td>
+                                        <td>{this.state.hengshengData.minpri}</td>
+                                        <td>{this.state.hengshengData.formpri}</td>
+                                        <td>{this.state.hengshengData.openpri}</td>
+                                        <td>{this.state.hengshengData.lastestpri}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </TabPane>
+>>>>>>> 8f46c8891900773dfb53f11e880298b425456b64
                     </Tabs>
                 </div>
                 <div className="content content-fupai" >
