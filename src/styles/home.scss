@@ -6,7 +6,6 @@
         align-items: center;
         justify-content: flex-start;
         flex-direction: column;
-        padding-bottom: 100px;
         padding-top: 40px;
     }
 
@@ -25,6 +24,40 @@
         padding-left: 50px;
         h2{
             padding-bottom: 12px;
+        }
+    }
+
+    .content-fupai {
+        display: flex;
+        align-items: left;
+        justify-content: flex-start;
+        padding-left: 50px;
+        h2{
+            padding-bottom: 12px;
+        }
+    }
+
+    .content-baozhang {
+        h3 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 40px;
+        }
+        ul {
+            text-align: center;
+            li {
+                display: inline-block;
+                overflow: hidden;
+                width: 300px;
+                height: 170px;
+                transition: 0.3s all ease;                                            
+                margin-right: 56px;
+
+            }
+        }
+        img {
+            width: 90px;
+            height: 84px;
         }
     }
     .pure-table {

@@ -18,7 +18,10 @@ class Home extends React.Component {
         this.state = {
             shangzhengData: [],
             shenzhengData: [],
+<<<<<<< HEAD
             hengshengData: [],
+=======
+>>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
         };
         // ProjCfg.base.APIServerBaseUrl
     }
@@ -39,6 +42,8 @@ class Home extends React.Component {
             // console.log(err);
             // console.log('222');
         });
+
+
         // jsonp('http://web.juhe.cn:8080/finance/stock/hs?gid=&type=0&key=1ed6d144683a32812ebe646f31a8e62e', null, function (err, data) {
         //     if (err) {
         //     //   console.error(err.message);
@@ -156,7 +161,11 @@ class Home extends React.Component {
                             </table>
                         </TabPane>
                         <TabPane tab="深证指数" key="2">
+<<<<<<< HEAD
                             <table className="pure-table">
+=======
+                        <table className="pure-table">
+>>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
                                 <tbody>
                                     <tr>
                                         <td>成交量</td>
@@ -170,6 +179,7 @@ class Home extends React.Component {
                                         <td>昨日收盘价</td>
                                     </tr>
                                     <tr>
+<<<<<<< HEAD
                                         <td>{this.state.shenzhengData.dealNum}</td>
                                         <td>{this.state.shenzhengData.dealPri}</td>
                                         <td>{this.state.shenzhengData.highPri}</td>
@@ -205,11 +215,67 @@ class Home extends React.Component {
                                         <td>{this.state.hengshengData.formpri}</td>
                                         <td>{this.state.hengshengData.openpri}</td>
                                         <td>{this.state.hengshengData.lastestpri}</td>
+=======
+                                        <td>{this.state.shangzhengData.dealNum}</td>
+                                        <td>{this.state.shangzhengData.dealPri}</td>
+                                        <td>{this.state.shangzhengData.highPri}</td>
+                                        <td>{this.state.shangzhengData.lowpri}</td>
+                                        <td>{this.state.shangzhengData.increPer}</td>
+                                        <td>{this.state.shangzhengData.increase}</td>
+                                        <td>{this.state.shangzhengData.nowpri}</td>
+                                        <td>{this.state.shangzhengData.openPri}</td>
+                                        <td>{this.state.shangzhengData.yesPri}</td>
+>>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
                                     </tr>
                                 </tbody>
                             </table>
                         </TabPane>
+<<<<<<< HEAD
+=======
+                        <TabPane tab="恒生指数" key="3"></TabPane>
+>>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
                     </Tabs>
+                </div>
+                <div className="content content-fupai" >
+                    <h2>停复牌及新上市股票</h2>
+                    <Tabs defaultActiveKey="1">
+                        <TabPane tab="停牌股票" key="1">
+                            <table className="pure-table">
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </TabPane>
+                        <TabPane tab="复牌股票" key="2"></TabPane>
+                        <TabPane tab="首发上市股票" key="3"></TabPane>
+                    </Tabs>
+                </div>
+                <div className="content content-baozhang">
+                    <h3>专业的安全保障</h3>
+                    <ul>
+                        <li>
+                            <img src={require("../static/images/safe1.png")} alt="safe"></img>
+                            <p>系统可靠</p>
+                        </li>
+                        <li>
+                            <img src={require("../static/images/safe2.png")} alt="safe"></img>
+                            <p>资金安全</p>
+                        </li>
+                        <li>
+                            <img src={require("../static/images/safe3.png")} alt="safe"></img>
+                            <p>快捷方便</p>
+                        </li>
+                        <li>
+                            <img src={require("../static/images/safe4.png")} alt="safe"></img>
+                            <p>服务专业</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         );
