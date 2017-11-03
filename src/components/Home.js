@@ -18,10 +18,6 @@ class Home extends React.Component {
         this.state = {
             shangzhengData: [],
             shenzhengData: [],
-<<<<<<< HEAD
-            hengshengData: [],
-=======
->>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
         };
         // ProjCfg.base.APIServerBaseUrl
     }
@@ -51,36 +47,6 @@ class Home extends React.Component {
         //     //   console.log(data);
         //     }
         //   });
-        axios({
-            method: 'get',
-            url: '/finance/stock/hs?gid=&type=1&key=1ed6d144683a32812ebe646f31a8e62e'
-        }).then(function (response) {
-            console.log('response', response);
-            if (response.status == 200) {
-                console.log('result', response.data.result);
-                self.setState({
-                    shenzhengData: response.data.result,
-                });
-            }
-        }).catch(function (err) {
-            // console.log(err);
-            // console.log('222');
-        });
-        axios({
-            method: 'get',
-            url: '/finance/stock/hk?num=00001&key=1ed6d144683a32812ebe646f31a8e62e'
-        }).then(function (response) {
-            console.log('response333', response);
-            if (response.status == 200) {
-                console.log('result222', response.data.result[0].hengsheng_data);
-                self.setState({
-                    hengshengData: response.data.result[0].hengsheng_data,
-                });
-            }
-        }).catch(function (err) {
-            // console.log(err);
-            // console.log('222');
-        });
     }
 
     render() {
@@ -161,79 +127,9 @@ class Home extends React.Component {
                             </table>
                         </TabPane>
                         <TabPane tab="深证指数" key="2">
-<<<<<<< HEAD
-                            <table className="pure-table">
-=======
-                        <table className="pure-table">
->>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
-                                <tbody>
-                                    <tr>
-                                        <td>成交量</td>
-                                        <td>成交额</td>
-                                        <td>最高价</td>
-                                        <td>最低价</td>
-                                        <td>跌涨百分比</td>
-                                        <td>跌涨幅</td>
-                                        <td>当前价格</td>
-                                        <td>今日开盘价</td>
-                                        <td>昨日收盘价</td>
-                                    </tr>
-                                    <tr>
-<<<<<<< HEAD
-                                        <td>{this.state.shenzhengData.dealNum}</td>
-                                        <td>{this.state.shenzhengData.dealPri}</td>
-                                        <td>{this.state.shenzhengData.highPri}</td>
-                                        <td>{this.state.shenzhengData.lowpri}</td>
-                                        <td>{this.state.shenzhengData.increPer}</td>
-                                        <td>{this.state.shenzhengData.increase}</td>
-                                        <td>{this.state.shenzhengData.nowpri}</td>
-                                        <td>{this.state.shenzhengData.openPri}</td>
-                                        <td>{this.state.shenzhengData.yesPri}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        
                         </TabPane>
-                        <TabPane tab="恒生指数" key="3">
-                            <table className="pure-table">
-                                <tbody>
-                                    <tr>
-                                        <td>成交额</td>
-                                        <td>涨跌额</td>
-                                        <td>涨跌幅</td>
-                                        <td>最高价</td>
-                                        <td>最低价</td>
-                                        <td>前收盘价</td>
-                                        <td>开盘价</td>
-                                        <td>最新价</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{this.state.hengshengData.traAmount}</td>
-                                        <td>{this.state.hengshengData.uppic}</td>
-                                        <td>{this.state.hengshengData.limit}</td>
-                                        <td>{this.state.hengshengData.maxpri}</td>
-                                        <td>{this.state.hengshengData.minpri}</td>
-                                        <td>{this.state.hengshengData.formpri}</td>
-                                        <td>{this.state.hengshengData.openpri}</td>
-                                        <td>{this.state.hengshengData.lastestpri}</td>
-=======
-                                        <td>{this.state.shangzhengData.dealNum}</td>
-                                        <td>{this.state.shangzhengData.dealPri}</td>
-                                        <td>{this.state.shangzhengData.highPri}</td>
-                                        <td>{this.state.shangzhengData.lowpri}</td>
-                                        <td>{this.state.shangzhengData.increPer}</td>
-                                        <td>{this.state.shangzhengData.increase}</td>
-                                        <td>{this.state.shangzhengData.nowpri}</td>
-                                        <td>{this.state.shangzhengData.openPri}</td>
-                                        <td>{this.state.shangzhengData.yesPri}</td>
->>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </TabPane>
-<<<<<<< HEAD
-=======
                         <TabPane tab="恒生指数" key="3"></TabPane>
->>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
                     </Tabs>
                 </div>
                 <div className="content content-fupai" >
