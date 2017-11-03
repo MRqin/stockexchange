@@ -18,10 +18,7 @@ class Home extends React.Component {
         this.state = {
             shangzhengData: [],
             shenzhengData: [],
-<<<<<<< HEAD
             hengshengData: [],
-=======
->>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
         };
         // ProjCfg.base.APIServerBaseUrl
     }
@@ -161,11 +158,7 @@ class Home extends React.Component {
                             </table>
                         </TabPane>
                         <TabPane tab="深证指数" key="2">
-<<<<<<< HEAD
                             <table className="pure-table">
-=======
-                        <table className="pure-table">
->>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
                                 <tbody>
                                     <tr>
                                         <td>成交量</td>
@@ -179,7 +172,6 @@ class Home extends React.Component {
                                         <td>昨日收盘价</td>
                                     </tr>
                                     <tr>
-<<<<<<< HEAD
                                         <td>{this.state.shenzhengData.dealNum}</td>
                                         <td>{this.state.shenzhengData.dealPri}</td>
                                         <td>{this.state.shenzhengData.highPri}</td>
@@ -215,25 +207,10 @@ class Home extends React.Component {
                                         <td>{this.state.hengshengData.formpri}</td>
                                         <td>{this.state.hengshengData.openpri}</td>
                                         <td>{this.state.hengshengData.lastestpri}</td>
-=======
-                                        <td>{this.state.shangzhengData.dealNum}</td>
-                                        <td>{this.state.shangzhengData.dealPri}</td>
-                                        <td>{this.state.shangzhengData.highPri}</td>
-                                        <td>{this.state.shangzhengData.lowpri}</td>
-                                        <td>{this.state.shangzhengData.increPer}</td>
-                                        <td>{this.state.shangzhengData.increase}</td>
-                                        <td>{this.state.shangzhengData.nowpri}</td>
-                                        <td>{this.state.shangzhengData.openPri}</td>
-                                        <td>{this.state.shangzhengData.yesPri}</td>
->>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
                                     </tr>
                                 </tbody>
                             </table>
                         </TabPane>
-<<<<<<< HEAD
-=======
-                        <TabPane tab="恒生指数" key="3"></TabPane>
->>>>>>> d16722279f55b52de84ba15052cb6b7fc10c11a8
                     </Tabs>
                 </div>
                 <div className="content content-fupai" >
