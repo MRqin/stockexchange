@@ -14,12 +14,13 @@ const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 class Home extends React.Component {
     constructor(props) {
-	    super(props);
-	    this.state = {
-            shangzhengData:[],
-		};
+        super(props);
+        this.state = {
+            shangzhengData: [],
+            shenzhengData: [],
+        };
         // ProjCfg.base.APIServerBaseUrl
-	}
+    }
     componentDidMount() {
         var self = this;
         axios({
@@ -27,8 +28,8 @@ class Home extends React.Component {
             url: '/finance/stock/hs?gid=&type=0&key=1ed6d144683a32812ebe646f31a8e62e'
         }).then(function (response) {
             console.log('response', response);
-            if (response.status == 200 ) {
-                console.log('result',response.data.result);
+            if (response.status == 200) {
+                console.log('result', response.data.result);
                 self.setState({
                     shangzhengData: response.data.result,
                 });
@@ -37,6 +38,8 @@ class Home extends React.Component {
             // console.log(err);
             // console.log('222');
         });
+
+
         // jsonp('http://web.juhe.cn:8080/finance/stock/hs?gid=&type=0&key=1ed6d144683a32812ebe646f31a8e62e', null, function (err, data) {
         //     if (err) {
         //     //   console.error(err.message);
@@ -96,37 +99,104 @@ class Home extends React.Component {
                     <h2>重要指数</h2>
                     <Tabs defaultActiveKey="1">
                         <TabPane tab="上证指数" key="1">
-                        <table className="pure-table">
-                            <tbody>
-                                <tr>
-                                    <td>成交量</td>
-                                    <td>成交额</td>
-                                    <td>最高价</td>
-                                    <td>最低价</td>
-                                    <td>跌涨百分比</td>
-                                    <td>跌涨幅</td>
-                                    <td>当前价格</td>
-                                    <td>今日开盘价</td>
-                                    <td>昨日收盘价</td>
-                                </tr>
-                                <tr>
-                                    <td>{this.state.shangzhengData.dealNum}</td>
-                                    <td>{this.state.shangzhengData.dealPri}</td>
-                                    <td>{this.state.shangzhengData.highPri}</td>
-                                    <td>{this.state.shangzhengData.lowpri}</td>
-                                    <td>{this.state.shangzhengData.increPer}</td>
-                                    <td>{this.state.shangzhengData.increase}</td>
-                                    <td>{this.state.shangzhengData.nowpri}</td>
-                                    <td>{this.state.shangzhengData.openPri}</td>
-                                    <td>{this.state.shangzhengData.yesPri}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <table className="pure-table">
+                                <tbody>
+                                    <tr>
+                                        <td>成交量</td>
+                                        <td>成交额</td>
+                                        <td>最高价</td>
+                                        <td>最低价</td>
+                                        <td>跌涨百分比</td>
+                                        <td>跌涨幅</td>
+                                        <td>当前价格</td>
+                                        <td>今日开盘价</td>
+                                        <td>昨日收盘价</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{this.state.shangzhengData.dealNum}</td>
+                                        <td>{this.state.shangzhengData.dealPri}</td>
+                                        <td>{this.state.shangzhengData.highPri}</td>
+                                        <td>{this.state.shangzhengData.lowpri}</td>
+                                        <td>{this.state.shangzhengData.increPer}</td>
+                                        <td>{this.state.shangzhengData.increase}</td>
+                                        <td>{this.state.shangzhengData.nowpri}</td>
+                                        <td>{this.state.shangzhengData.openPri}</td>
+                                        <td>{this.state.shangzhengData.yesPri}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </TabPane>
-                        <TabPane tab="深证指数" key="2"></TabPane>
-                        <li></li>
+                        <TabPane tab="深证指数" key="2">
+                        <table className="pure-table">
+                                <tbody>
+                                    <tr>
+                                        <td>成交量</td>
+                                        <td>成交额</td>
+                                        <td>最高价</td>
+                                        <td>最低价</td>
+                                        <td>跌涨百分比</td>
+                                        <td>跌涨幅</td>
+                                        <td>当前价格</td>
+                                        <td>今日开盘价</td>
+                                        <td>昨日收盘价</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{this.state.shangzhengData.dealNum}</td>
+                                        <td>{this.state.shangzhengData.dealPri}</td>
+                                        <td>{this.state.shangzhengData.highPri}</td>
+                                        <td>{this.state.shangzhengData.lowpri}</td>
+                                        <td>{this.state.shangzhengData.increPer}</td>
+                                        <td>{this.state.shangzhengData.increase}</td>
+                                        <td>{this.state.shangzhengData.nowpri}</td>
+                                        <td>{this.state.shangzhengData.openPri}</td>
+                                        <td>{this.state.shangzhengData.yesPri}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </TabPane>
                         <TabPane tab="恒生指数" key="3"></TabPane>
                     </Tabs>
+                </div>
+                <div className="content content-fupai" >
+                    <h2>停复牌及新上市股票</h2>
+                    <Tabs defaultActiveKey="1">
+                        <TabPane tab="停牌股票" key="1">
+                            <table className="pure-table">
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </TabPane>
+                        <TabPane tab="复牌股票" key="2"></TabPane>
+                        <TabPane tab="首发上市股票" key="3"></TabPane>
+                    </Tabs>
+                </div>
+                <div className="content content-baozhang">
+                    <h3>专业的安全保障</h3>
+                    <ul>
+                        <li>
+                            <img src={require("../static/images/safe1.png")} alt="safe"></img>
+                            <p>系统可靠</p>
+                        </li>
+                        <li>
+                            <img src={require("../static/images/safe2.png")} alt="safe"></img>
+                            <p>资金安全</p>
+                        </li>
+                        <li>
+                            <img src={require("../static/images/safe3.png")} alt="safe"></img>
+                            <p>快捷方便</p>
+                        </li>
+                        <li>
+                            <img src={require("../static/images/safe4.png")} alt="safe"></img>
+                            <p>服务专业</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         );
