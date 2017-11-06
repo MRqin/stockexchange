@@ -1,0 +1,97 @@
+.footer {
+    background-color: #F8F8F8;
+
+    .footer-link {
+        display: flex;
+        align-content: flex-start;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        padding-left: 70px;
+        padding-right: 70px;
+        padding-top: 48px;
+        background-color: #F8F8F8;
+        color: #666;
+        .footer-link-list {
+            display: flex;
+            align-content: flex-start;
+            // justify-content: space-between;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 10px;
+
+            img {
+                width:303px;
+                height:46px;
+                margin-top: 50px;
+            }
+
+            
+            &:first-child {
+                width:190px;
+                border-right:solid 1px rgba(255, 255, 255, 0.1);
+            }
+            &:last-child {
+                padding-left:60px;
+            }
+            &>li {
+                display: inline-block;
+                margin-right: 20px;
+                width: 160px;
+                h4 {
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                }
+                &:first-child {
+                    margin-right: 0;
+                }
+                &:last-child {
+                    width: 300px;
+                    margin-right: 0;
+                    /* ul {
+                        li {
+                            margin-bottom: 16px;
+                        }
+                    } */
+                }
+                ul {
+                    padding-left: 0;
+                    li {
+                        font-family: "Microsoft YaHei","微软雅黑",arial,Tahoma,SimSun,sans-serif!important;
+                        color: #666;
+                        -webkit-font-smoothing: antialiased;
+                        font-weight: 400;
+                        margin-bottom: 5px;
+                        a {
+                            color:#666;
+                        }
+                    
+                    }
+                }
+            }
+        }
+    }
+    .warning {
+        padding-left: 80px;
+        font-size: 12px;
+        color: #cc0000;
+        font-weight: 300;
+        margin-bottom: 30px;
+
+    }
+    .footer-copyright {
+        height: 60px;
+        background-color: #20242B;
+        p {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 0;
+            margin-bottom: 0;
+            height: 60px;
+            line-height: 60px;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0 auto;
+            width: 1000px;
+        }
+    }
+}

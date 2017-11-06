@@ -21,7 +21,7 @@
         display: flex;
         align-items: left;
         justify-content: flex-start;
-        padding-left: 50px;
+        padding-left: 70px;
         h2{
             padding-bottom: 12px;
         }
@@ -31,7 +31,22 @@
         display: flex;
         align-items: left;
         justify-content: flex-start;
-        padding-left: 50px;
+        padding-left: 70px;
+        padding-bottom: 40px;
+        border-bottom: 2px solid #eee;
+        h2{
+            padding-bottom: 12px;
+        }
+        .ant-tabs {
+            width: 1000px;
+        }
+    }
+
+    .content-chuquan {
+        display: flex;
+        align-items: left;
+        justify-content: flex-start;
+        padding-left: 70px;
         h2{
             padding-bottom: 12px;
         }
