@@ -142,26 +142,26 @@ class Home extends React.Component {
             // console.log('222');
         });
 
-        axios({
-            method: 'get',
-            url: 'http://ali-stock.showapi.com/stop-start-divide?date=' + today,
-            headers: {
-                'Authorization': 'APPCODE 3441821118114ad3a91145af64dba101',
-            }
-        }).then(function (response) {
-            if (response.status == 200) {
-                console.log(response.data.showapi_res_body);
-                self.setState({
-                    stopList: response.data.showapi_res_body.stopList,
-                    recoverList: response.data.showapi_res_body.recoverList,
-                    startList: response.data.showapi_res_body.startList,
-                    addNewStockNetPublishList: response.data.showapi_res_body.addNewStockNetPublishList,
-                });
-            }
-        }).catch(function (err) {
-            //    console.log(err.response);
-            // console.log('222');
-        });
+        // axios({
+        //     method: 'get',
+        //     url: 'http://ali-stock.showapi.com/stop-start-divide?date=' + today,
+        //     headers: {
+        //         'Authorization': 'APPCODE 3441821118114ad3a91145af64dba101',
+        //     }
+        // }).then(function (response) {
+        //     if (response.status == 200) {
+        //         console.log(response.data.showapi_res_body);
+        //         self.setState({
+        //             stopList: response.data.showapi_res_body.stopList,
+        //             recoverList: response.data.showapi_res_body.recoverList,
+        //             startList: response.data.showapi_res_body.startList,
+        //             addNewStockNetPublishList: response.data.showapi_res_body.addNewStockNetPublishList,
+        //         });
+        //     }
+        // }).catch(function (err) {
+        //     //    console.log(err.response);
+        //     // console.log('222');
+        // });
     }
 
     render() {
