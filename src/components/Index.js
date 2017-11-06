@@ -15,7 +15,7 @@ const Index = () => (
         <div>
             <Route exact path="/" component={Home}/>
             <Route path="/trade" component={Trade} />
-            <Route path="/finance" component={Finance} />
+            <Route path="/finance" component={Finance} /> 
         </div>
     </Router>
 );
