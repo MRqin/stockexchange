@@ -1,0 +1,33 @@
+#finance{
+    .content {
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-top: 40px;
+    }
+    
+
+    .content-finance {
+        display: flex;
+        align-items: left;
+        justify-content: flex-start;
+        padding-left: 50px;
+        h2{
+            padding-bottom: 30px;
+        }
+    }
+
+    // .pure-table {
+    //     width: 1000px;
+    //     border: 1px solid #e1e3e5;
+    // }
+    // .pure-table td {
+    //     font-size: 14px;
+    //     color: #525b63;
+    //     padding: 15px;
+    //     border-bottom: 1px solid #e1e3e5;
+    // }
+}
