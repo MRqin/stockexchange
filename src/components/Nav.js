@@ -18,7 +18,7 @@ export default class Nav extends React.Component {
                     <Link className="pure-menu-heading" to="/"></Link>
                     <ul className="pure-menu-list">
                         <li className="pure-menu-item pure-menu-selected"><Link to="/" className="pure-menu-link">首页</Link></li>
-                        <li className="pure-menu-item"><Link to="/exchange" className="pure-menu-link">交易中心</Link></li>
+                        <li className="pure-menu-item"><Link to="/trade" className="pure-menu-link">交易中心</Link></li>
                         <li className="pure-menu-item"><Link to="/finance" className="pure-menu-link">财务中心</Link></li>
                     </ul>
                     <ul className="pure-menu-list pure-menu-list-right">
