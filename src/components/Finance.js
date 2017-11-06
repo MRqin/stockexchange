@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -20,4 +17,3 @@ export default class Trade extends React.Component {
         );
     }
 }
->>>>>>> 9eb8bd014e3d1b7722bb6e01782967582670353d
