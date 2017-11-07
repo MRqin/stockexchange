@@ -118,18 +118,18 @@ const columns1 = [{
     width: '15%',
   },{
     title: '成交价格',
-    dataIndex: 'price',
-    key: 'price',
+    dataIndex: 'averageprice',
+    key: 'averageprice',
     sorter: true,
     width: '15%',
-    sorter: (a, b) => a.price - b.price,
+    sorter: (a, b) => a.averageprice - b.averageprice,
   },{
-    title: '订单数量',
-    dataIndex: 'total',
-    key: 'total',
+    title: '成交数量',
+    dataIndex: 'finish',
+    key: 'finish',
     sorter: true,
     width: '15%',
-    sorter: (a, b) => a.total - b.total,
+    sorter: (a, b) => a.finish - b.finish,
   }];
 
 
@@ -140,7 +140,7 @@ export default class Trade extends React.Component {
         this.state = {
             stockPositon: [],
             stockOrder: [],
-            
+            stockUser: [],
         };
         // ProjCfg.base.APIServerBaseUrl
     }
@@ -196,7 +196,7 @@ export default class Trade extends React.Component {
                     <Tabs tabPosition='left'>
                         <TabPane tab={<span><Icon type="pay-circle-o" />财务中心</span>} key="1">
                             <h1>财务中心</h1><br/>
-                            <p style={{fontSize:20}}>您的可用余额： {this.state.stockPosition}</p><br/>
+                            {/* <p style={{fontSize:20}}>您的可用余额： {this.state.stockPosition}</p><br/> */}
                             <Table rowKey="trade" columns={columns1} dataSource={this.state.stockPosition} />
                         </TabPane>
                         <TabPane tab={<span><Icon type="solution" />订单管理</span>} key="2">

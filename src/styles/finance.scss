@@ -15,23 +15,14 @@
         align-items: left;
         justify-content: flex-start;
         padding-left: 50px;
-        h2{
+        h1{
             padding-bottom: 30px;
         }
-        .ant-tabs-tab{
-            width:240px;
-
-        }
+       
     }
 
-    // .pure-table {
-    //     width: 1000px;
-    //     border: 1px solid #e1e3e5;
-    // }
-    // .pure-table td {
-    //     font-size: 14px;
-    //     color: #525b63;
-    //     padding: 15px;
-    //     border-bottom: 1px solid #e1e3e5;
-    // }
+    .ant-tabs-nav-wrap {
+        width: 200px;
+    }
 }
+
