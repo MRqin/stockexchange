@@ -10,13 +10,17 @@
     }
     
 
-    .content-finance {
+    .content-trade {
         display: flex;
         align-items: left;
         justify-content: flex-start;
         padding-left: 50px;
         h2{
             padding-bottom: 30px;
+        }
+        .ant-tabs-tab{
+            width:240px;
+
         }
     }
 

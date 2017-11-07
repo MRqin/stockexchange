@@ -26,6 +26,8 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use('/finance/stock/*', proxy({target:'http://web.juhe.cn:8080',changeOrigin:true}));
 // app.use('/*', proxy({target:' http://ali-stock.showapi.com',changeOrigin:true}));
 
+app.use('/stock/*', proxy({target:'http://10.82.25.81:8080',changeOrigin:true}));
+
 app.use(require('webpack-hot-middleware')(compiler));
 // all other url redirect ro index.html
 app.get('*', function(req, res) {
