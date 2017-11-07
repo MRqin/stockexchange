@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/header.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon, Modal, Button} from 'antd';
 const { SubMenu } = Menu;
 import {
     BrowserRouter as Router,
@@ -11,6 +11,55 @@ import {
 } from 'react-router-dom';
 
 export default class Nav extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            regVisible: false,
+            loginVisible: false,
+        };
+        this.showLoginModal = this.showLoginModal.bind(this);
+        this.showRegModal = this.showRegModal.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleLoginCan = this.handleLoginCan.bind(this);
+        this.handleRegCan = this.handleRegCan.bind(this);
+        this.handleReg = this.handleReg.bind(this);
+        // ProjCfg.base.APIServerBaseUrl
+    }
+
+    showRegModal(){
+        this.setState({
+            regVisible: true,
+        });
+    }
+    showLoginModal(){
+        this.setState({
+            loginVisible: true,
+        });
+    }
+
+    handleLogin() {
+        this.setState({
+            loginVisible: false,
+        });
+    }
+
+    handleReg() {
+        this.setState({
+            regVisible: false,
+        });
+    }
+
+    handleLoginCan() {
+        this.setState({
+            loginVisible: false,
+        });
+    }
+
+    handleRegCan() {
+        this.setState({
+            regVisible: false,
+        });
+    }
     render() {
         return (
             <div className="nav">
@@ -22,10 +71,14 @@ export default class Nav extends React.Component {
                         <li className="pure-menu-item"><Link to="/finance" className="pure-menu-link">财务中心</Link></li>
                     </ul>
                     <ul className="pure-menu-list pure-menu-list-right">
-                        <li className="pure-menu-item"><Link to="/log/register" className="pure-button pure-button-normal"  >注册</Link></li>
-                        <li className="pure-menu-item"><Link to="/log/login" className="pure-menu-link"  >登录</Link></li>
+                    <li className="pure-menu-item"><Button  className="pure-button pure-button-normal"  onClick={this.showRegModal}>注册</Button></li>
+                    <li className="pure-menu-item"><Button className="pure-menu-link"  onClick={this.showLoginModal}>登录</Button></li>
                     </ul>
                 </div>
+                <Modal title="注册" visible={this.state.regVisible} onOk={this.handleReg} onCancel={this.handleRegCan}>
+                </Modal>
+                <Modal title="登录" visible={this.state.loginVisible} onOk={this.handleLogin} onCancel={this.handleLoginCan}>
+                </Modal>
             </div>
         );
     }

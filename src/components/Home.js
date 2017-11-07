@@ -138,8 +138,8 @@ class Home extends React.Component {
                 });
             }
         }).catch(function (err) {
-            // console.log(err);
-            // console.log('222');
+            console.log(err);
+            console.log('222');
         });
 
         // axios({
@@ -176,7 +176,7 @@ class Home extends React.Component {
                 <Nav />
                 <div className="content content-intro">
                     <div className="login-box">
-                        <h5 className="black">登录</h5>
+                        <h2 >登录</h2>
                         <Form onSubmit={this.handleSubmit}>
                             <label>账户名</label>
                             <FormItem {...formItemLayout} >
@@ -194,7 +194,6 @@ class Home extends React.Component {
                                     )}
                             </FormItem>
                             <label>密码</label>
-                            <Link to="/log/pwd" className="login-form-forgot" >忘记密码？</Link>
                             <FormItem {...formItemLayout}>
                                 {getFieldDecorator('password', {
                                     rules: [{
@@ -205,7 +204,7 @@ class Home extends React.Component {
                                     )}
                             </FormItem>
                             <FormItem>
-                                <Button type="primary" htmlType="submit">提交</Button>
+                                <Button type="primary" htmlType="submit">登录</Button>
                             </FormItem>
                         </Form>
                     </div>
