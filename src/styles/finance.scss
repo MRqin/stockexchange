@@ -1,25 +1,16 @@
-#finance{
-    .content {
-        width: 100%;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-direction: column;
-        padding-top: 40px;
-    }
-    
 
     .content-trade {
         display: flex;
         align-items: left;
+        flex-direction: column;
         justify-content: flex-start;
         padding-left: 50px;
         h1{
             padding-bottom: 30px;
         }
-       
+        
     }
+<<<<<<< HEAD
 
 }
 
@@ -27,3 +18,18 @@
     width: 200px !important;
 }
 
+=======
+    .ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar  {
+        width: 200px;
+    }
+    .ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab {
+        text-align: right;
+        font-size: 20px;
+    }
+    .ant-tag-text{
+        font-size: 20px;
+    }
+    .ant-table-wrapper {
+        width: 1200px;
+    }
+>>>>>>> 3d647d5d6eeff455df77d34823a1f3458bde25e8
