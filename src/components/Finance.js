@@ -257,7 +257,7 @@ export default class Trade extends React.Component {
         var self = this;
         axios({
             method: 'get',
-            url: '/stock/position/query?belong=lucy'
+            url: '/stock/position/query?belong='+window.localStorage.getItem('user'),
         }).then(function (response) {
             console.log('111', response);
             if (response.status == 200) {
@@ -270,7 +270,7 @@ export default class Trade extends React.Component {
         });
         axios({
             method: 'get',
-            url: '/stock/user/query?name=lucy'
+            url: '/stock/user/query?name='+window.localStorage.getItem('user'),
         }).then(function (response) {
             console.log('333', response);
             if (response.status == 200) {
@@ -282,7 +282,7 @@ export default class Trade extends React.Component {
         });
         axios({
             method: 'get',
-            url: '/stock/order/query?belong=lucy'
+            url: '/stock/order/query?belong='+window.localStorage.getItem('user'),
         }).then(function (response) {
             console.log('222', response);
             if (response.status == 200) {
