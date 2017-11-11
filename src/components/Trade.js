@@ -5,6 +5,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {reciveTitle} from '../actions/actions.js';
 import axios from 'axios';
 import { Tabs, Table, Input } from 'antd';
 import Nav from './Nav';
@@ -57,15 +59,19 @@ const Search = Input.Search;
 // }];
 
 
-export default class Trade extends React.Component {
+class Trade extends React.Component {
     constructor(props) {
         super(props);
+
+        this.openDetails = this.openDetails.bind(this);
+        var that = this;
         this.columns1 = [{
             title: '股票代码',
             dataIndex: 'symbol',
             render(text,record,index) {
                 return(
-                    <Link to="/trade/details"  onClick={this.openDetails(text)}>{text}</Link>
+                    <Link to="/trade/details"  onClick={() =>that.openDetails(text)}>{text}</Link>
+                    // <a href="#" onClick={() =>that.openDetails(index)}>{text}</a>
                 );
             } 
         }, {
@@ -313,7 +319,8 @@ export default class Trade extends React.Component {
     }
 
     openDetails(text) {
-        
+        this.props.reciveTitle(text);
+        console.log('text',text);
     }
 
     searchStock(value) {
@@ -373,22 +380,22 @@ export default class Trade extends React.Component {
                         <Table rowKey="code" columns={this.columns1} dataSource={this.state.shData} />
                         </TabPane>
                         <TabPane tab="深股列表" key="2">
-                        <Table rowKey="code" columns={this.columns1} dataSource={this.state.szData} />
+                        <Table rowKey="code2" columns={this.columns1} dataSource={this.state.szData} />
                         </TabPane>
                     </Tabs>
                     </div> 
                     <div className="single" style={this.state.shDisplay === true ? {display: 'flex'} : {display : 'none'}}>
-                    <Table rowKey="code" columns={this.columns3} dataSource={this.state.shStock} />
+                    <Table rowKey="code3" columns={this.columns3} dataSource={this.state.shStock} />
                     </div>
                 </div>
                 <div className="content content-hk">
                     <h2>香港股市</h2>
                     <Search className="shSearch" placeholder="股票代码" style={{width:300}} onSearch={this.searchkStock} />
                     <div style={this.state.hkDisplay === false ? {display: 'flex'} : {display : 'none'}}>
-                        <Table rowKey="code" columns={this.columns2} dataSource={this.state.hkData} />
+                        <Table rowKey="code4" columns={this.columns2} dataSource={this.state.hkData} />
                         </div>
                         <div className="hksingle" style={this.state.hkDisplay === true ? {display: 'flex'} : {display : 'none'}}>
-                    <Table rowKey="code" columns={this.columns4} dataSource={this.state.hkStock} />
+                    <Table rowKey="code5" columns={this.columns4} dataSource={this.state.hkStock} />
                     </div>
                 </div>
                 <Footer />
@@ -397,3 +404,12 @@ export default class Trade extends React.Component {
         );
     }
 }
+
+Trade.propTypes = {
+    reciveTitle : PropTypes.func,
+};
+const mapDispatchToProps = ({
+    reciveTitle: reciveTitle,
+});
+
+export default connect(null, mapDispatchToProps)(Trade);

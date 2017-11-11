@@ -21,8 +21,9 @@
        
     }
 
-    .ant-tabs-nav-wrap {
-        width: 200px;
-    }
+}
+
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab {
+    width: 200px !important;
 }
 

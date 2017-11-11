@@ -175,7 +175,7 @@ class Home extends React.Component {
             <div id="home">
                 <Nav />
                 <div className="content content-intro">
-                    <div className="login-box">
+                    {/* <div className="login-box">
                         <h2 >登录</h2>
                         <Form onSubmit={this.handleSubmit}>
                             <label>账户名</label>
@@ -183,14 +183,12 @@ class Home extends React.Component {
                                 {getFieldDecorator('userName', {
                                     rules: [
                                         {
-                                            required: true, message: '手机号不能为空',
-                                        }, {
-                                            validator: this.checkPhone,
+                                            required: true, message: '帐号不能为空',
                                         }],
                                     validateTrigger: 'onBlur',
                                 })
                                     (
-                                    <Input placeholder="手机号" />
+                                    <Input  />
                                     )}
                             </FormItem>
                             <label>密码</label>
@@ -207,7 +205,11 @@ class Home extends React.Component {
                                 <Button type="primary" htmlType="submit">登录</Button>
                             </FormItem>
                         </Form>
-                    </div>
+                    </div> */}
+                    <div>
+                        <p className="main">当合适的时机出现时，要坚决的采取行动</p>
+                        <p className="name">— —查理·芒格</p>
+                        </div>
                 </div>
                 <div className="content content-dangri">
                     <h2>重要指数</h2>
