@@ -50,6 +50,8 @@ export default class Nav extends React.Component {
     }
 
     handleLogin() {
+        console.log('aaaaaa');
+        console.log(document.getElementsByClassName("input-param")[0].value);
         var self = this;
         axios.post('/stock/user/login',qs.stringify({
             name: document.getElementsByClassName("input-param")[0].value,
@@ -67,7 +69,7 @@ export default class Nav extends React.Component {
             console.log('222');
         });
         this.setState({
-            regVisible: false,
+            loginVisible: false,
         });
     }
 

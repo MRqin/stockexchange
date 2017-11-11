@@ -104,51 +104,53 @@ class TradeDetails extends React.Component {
                     </div>
                 </div>
                 <div className="content content-buy">
-                    <div className="mine">
-                        <div className="buyandsell">
-                            <div>
-                                <h2>买入</h2>
-                                <ul className="buy">
-                                    <li>
-                                        <span>股票代码</span>
-                                        <Input />
-                                    </li>
-                                    <li>
-                                        <span>买入价</span>
-                                        <Input />
-                                    </li>
-                                    <li>
-                                        <span>买入量</span>
-                                        <Input />
-                                    </li>
-                                    <li>
-                                        <Button type="primary" >买入</Button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h2>卖出</h2>
-                                <ul className="buy">
-                                    <li>
-                                        <span>股票代码</span>
-                                        <Input />
-                                    </li>
-                                    <li>
-                                        <span>卖出价</span>
-                                        <Input />
-                                    </li>
-                                    <li>
-                                        <span>卖出量</span>
-                                        <Input />
-                                    </li>
-                                    <li>
-                                        <Button type="primary" >卖出</Button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                        </div>
+                    <div>
+                        <h2>买入</h2>
+                        <ul className="buy">
+                            <li>
+                                <span>股票代码</span>
+                                <Input />
+                            </li>
+                            <li>
+                                <span>买入价</span>
+                                <Input />
+                            </li>
+                            <li>
+                                <span>买入量</span>
+                                <Input />
+                            </li>
+                            <li>
+                                <span>手续费</span>
+                                <p>0.02% (成交才收，撤单退回)</p>
+                            </li>
+                            <li>
+                                <Button type="primary" >买入</Button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>卖出</h2>
+                        <ul className="buy">
+                            <li>
+                                <span>股票代码</span>
+                                <Input />
+                            </li>
+                            <li>
+                                <span>卖出价</span>
+                                <Input />
+                            </li>
+                            <li>
+                                <span>卖出量</span>
+                                <Input />
+                            </li>
+                            <li>
+                                <span>手续费</span>
+                                <p>0.02% (成交才收，撤单退回)</p>
+                            </li>
+                            <li>
+                                <Button type="primary" >卖出</Button>
+                            </li>
+                        </ul>
                     </div>
                     <div>
                         <h2>买卖五档</h2>
