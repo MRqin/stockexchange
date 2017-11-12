@@ -6,8 +6,9 @@ import {
     Link
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Tabs, Input, Button } from 'antd';
+import { Tabs, Input, Button, Modal } from 'antd';
 import axios from 'axios';
+import qs from 'qs';
 import Nav from './Nav';
 import Footer from './Footer';
 import "../styles/tradeDetails.scss";
@@ -19,8 +20,12 @@ class TradeDetails extends React.Component {
         this.state = {
             detailPicture: [],
             detailData: [],
+            buyVisible: false,
         };
         // ProjCfg.base.APIServerBaseUrl
+        this.handle = this.handle.bind(this);
+        this.handleBuyCancel = this.handleBuyCancel.bind(this);
+        this.handleBuyOk = this.handleBuyOk.bind(this);
     }
     componentDidMount() {
         var test = this.props.title;
@@ -40,6 +45,40 @@ class TradeDetails extends React.Component {
             // console.log(err);
             // console.log('222');
         });
+    }
+
+    handle() {
+        this.setState({
+            buyVisible: true,
+        });
+    }
+
+    handleBuyOk(){
+        axios.post('/stock/order/add', qs.stringify({
+            stockcode: document.getElementsByClassName("input-param")[0].value,
+            price: document.getElementsByClassName("input-param")[1].value,
+            quantity: document.getElementsByClassName("input-param")[2].value,
+            belong: window.localStorage.getItem('user'),
+            type: 'buy',
+        })).then(function (response) {
+            if (response.status == 200) {
+                alert("委托已提交");
+            }
+        }).catch(function (err) {
+            console.log(err);
+            console.log('222');
+        });
+        console.log(document.getElementsByClassName("input-param"));
+        this.setState({
+            buyVisible: false,
+        });
+    }
+
+    handleBuyCancel(){
+        this.setState({
+            buyVisible: false,
+        });
+        console.log('aaaa');
     }
     render() {
         return (
@@ -109,22 +148,22 @@ class TradeDetails extends React.Component {
                         <ul className="buy">
                             <li>
                                 <span>股票代码</span>
-                                <Input />
+                                <Input className="input-param" />
                             </li>
                             <li>
                                 <span>买入价</span>
-                                <Input />
+                                <Input className="input-param" />
                             </li>
                             <li>
                                 <span>买入量</span>
-                                <Input />
+                                <Input className="input-param" />
                             </li>
                             <li>
                                 <span>手续费</span>
                                 <p>0.02% (成交才收，撤单退回)</p>
                             </li>
                             <li>
-                                <Button type="primary" >买入</Button>
+                                <Button type="primary" onClick={this.handle}>买入</Button>
                             </li>
                         </ul>
                     </div>
@@ -133,15 +172,15 @@ class TradeDetails extends React.Component {
                         <ul className="buy">
                             <li>
                                 <span>股票代码</span>
-                                <Input />
+                                <Input className="input-param" />
                             </li>
                             <li>
                                 <span>卖出价</span>
-                                <Input />
+                                <Input className="input-param" />
                             </li>
                             <li>
                                 <span>卖出量</span>
-                                <Input />
+                                <Input className="input-param" />
                             </li>
                             <li>
                                 <span>手续费</span>
@@ -219,7 +258,19 @@ class TradeDetails extends React.Component {
                     </div>
                 </div>
                 <Footer />
-            </div>
+                <div>
+                    <Modal
+                        title="委托买入确认"
+                        visible={this.state.buyVisible}
+                        onOk={this.handleBuyOk}
+                        onCancel={this.handleBuyCancel}
+                    >
+                        <p>Some contents...</p>
+                        <p>Some contents...</p>
+                        <p>Some contents...</p>
+                    </Modal>
+                </div>
+            </div >
         );
     }
 }
