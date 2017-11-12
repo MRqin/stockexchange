@@ -121,11 +121,6 @@ class Trade extends React.Component {
         }, {
             title: '股票名称',
             dataIndex: 'name',
-            render(text,record,index) {
-                return(
-                    <a href="#">{text}</a>
-                );
-            } 
         }, {
             title: '最新价',
             dataIndex: 'lasttrade',
@@ -164,17 +159,13 @@ class Trade extends React.Component {
             dataIndex: 'gid',
             render(text,record,index) {
                 return(
-                    <a href="#">{text}</a>
+                    <Link to="/trade/details"  onClick={() =>that.openDetails(text)}>{text}</Link>
+                    // <a href="#" onClick={() =>that.openDetails(index)}>{text}</a>
                 );
             } 
         }, {
             title: '股票名称',
             dataIndex: 'name',
-            render(text,record,index) {
-                return(
-                    <a href="#">{text}</a>
-                );
-            } 
         }, {
             title: '最新价',
             dataIndex: 'nowPri',

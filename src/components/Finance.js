@@ -198,8 +198,7 @@ export default class Trade extends React.Component {
         var this1 = this;
         var dataSource = new Array();
         var dataSource1 = new Array();
-        var dataSource2 = new Array();
-        dataSource = this1.state.stockOrder;
+        dataSource = this1.state.stockOrderNew;
         console.log('dataSource',dataSource);
         // var a = dataSource.index;
         dataSource1 = dataSource.filter(function (item) {
@@ -207,13 +206,9 @@ export default class Trade extends React.Component {
             // console.log('item',item);
             return item.id !== id;
         }); 
-        dataSource2 = dataSource1.filter(function (item) {
-            return item.state == "未完成";
-        });
         this1.setState({
-            stockOrderNew: dataSource2,
+            stockOrderNew: dataSource1,
         });
-        console.log('dataSource2',dataSource2);
         axios({
             method: 'get',
             url: '/stock/order/delete?id=' + id,
