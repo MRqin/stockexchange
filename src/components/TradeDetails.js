@@ -21,11 +21,18 @@ class TradeDetails extends React.Component {
             detailPicture: [],
             detailData: [],
             buyVisible: false,
+            sellVisible: false,
+            stockcode: '',
+            price: '',
+            quantity: '',
         };
         // ProjCfg.base.APIServerBaseUrl
-        this.handle = this.handle.bind(this);
+        this.handle1 = this.handle1.bind(this);
         this.handleBuyCancel = this.handleBuyCancel.bind(this);
         this.handleBuyOk = this.handleBuyOk.bind(this);
+        this.handle2 = this.handle2.bind(this);
+        this.handleSellCancel = this.handleSellCancel.bind(this);
+        this.handleSellOk = this.handleSellOk.bind(this);
     }
     componentDidMount() {
         var test = this.props.title;
@@ -47,9 +54,21 @@ class TradeDetails extends React.Component {
         });
     }
 
-    handle() {
+    handle1() {
         this.setState({
+            stockcode: document.getElementsByClassName("input-param")[0].value,
+            price: document.getElementsByClassName("input-param")[1].value,
+            quantity: document.getElementsByClassName("input-param")[2].value,
             buyVisible: true,
+        });
+    }
+
+    handle2() {
+        this.setState({
+            stockcode: document.getElementsByClassName("input-param")[3].value,
+            price: document.getElementsByClassName("input-param")[4].value,
+            quantity: document.getElementsByClassName("input-param")[5].value,
+            sellVisible: true,
         });
     }
 
@@ -72,11 +91,42 @@ class TradeDetails extends React.Component {
         this.setState({
             buyVisible: false,
         });
+       
+    }
+
+    handleSellOk(){
+        axios.post('/stock/order/add', qs.stringify({
+            stockcode: document.getElementsByClassName("input-param")[3].value,
+            price: document.getElementsByClassName("input-param")[4].value,
+            quantity: document.getElementsByClassName("input-param")[5].value,
+            belong: window.localStorage.getItem('user'),
+            type: 'sell',
+        })).then(function (response) {
+            if (response.status == 200) {
+                alert("委托已提交");
+            }
+        }).catch(function (err) {
+            console.log(err);
+            console.log('222');
+        });
+        console.log(document.getElementsByClassName("input-param"));
+        this.setState({
+            sellVisible: false,
+        });
+       
     }
 
     handleBuyCancel(){
         this.setState({
             buyVisible: false,
+        });
+        console.log('aaaa');
+    }
+
+
+    handleSellCancel(){
+        this.setState({
+            sellVisible: false,
         });
         console.log('aaaa');
     }
@@ -163,7 +213,7 @@ class TradeDetails extends React.Component {
                                 <p>0.02% (成交才收，撤单退回)</p>
                             </li>
                             <li>
-                                <Button type="primary" onClick={this.handle}>买入</Button>
+                                <Button type="primary" onClick={this.handle1}>买入</Button>
                             </li>
                         </ul>
                     </div>
@@ -187,7 +237,7 @@ class TradeDetails extends React.Component {
                                 <p>0.02% (成交才收，撤单退回)</p>
                             </li>
                             <li>
-                                <Button type="primary" >卖出</Button>
+                                <Button type="primary" onClick={this.handle2}>卖出</Button>
                             </li>
                         </ul>
                     </div>
@@ -258,16 +308,28 @@ class TradeDetails extends React.Component {
                     </div>
                 </div>
                 <Footer />
-                <div>
+                <div className="weituo">
                     <Modal
                         title="委托买入确认"
                         visible={this.state.buyVisible}
                         onOk={this.handleBuyOk}
                         onCancel={this.handleBuyCancel}
                     >
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
+                        <p>股票代码： {this.state.stockcode}</p>
+                        <p>价格： {this.state.price}</p>
+                        <p>数量： {this.state.quantity}</p>
+                        <p>您是否确认以上委托？</p>
+                    </Modal>
+                    <Modal
+                        title="委托卖出确认"
+                        visible={this.state.sellVisible}
+                        onOk={this.handleSellOk}
+                        onCancel={this.handleSellCancel}
+                    >
+                        <p>股票代码： {this.state.stockcode}</p>
+                        <p>价格： {this.state.price}</p>
+                        <p>数量： {this.state.quantity}</p>
+                        <p>您是否确认以上委托？</p>
                     </Modal>
                 </div>
             </div >
